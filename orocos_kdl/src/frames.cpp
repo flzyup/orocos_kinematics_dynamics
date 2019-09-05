@@ -253,10 +253,10 @@ void Rotation::GetRPY(double& roll,double& pitch,double& yaw) const
 		pitch = atan2(-data[6], sqrt( sqr(data[0]) +sqr(data[3]) )  );
         if ( fabs(pitch) > (M_PI/2.0-epsilon) ) {
             yaw = atan2(	-data[1], data[4]);
-            roll  = 0.0 ;
+            roll = 0.0 ;
         } else {
-            roll  = atan2(data[7], data[8]);
-            yaw   = atan2(data[3], data[0]);
+            yaw = atan2(data[7], data[8]);
+            roll = atan2(data[3], data[0]);
         }
     }
 
