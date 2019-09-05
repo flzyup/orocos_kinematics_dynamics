@@ -238,9 +238,9 @@ namespace KDL {
 Rotation Rotation::RPY(double roll,double pitch,double yaw)
     {
         double ca1,cb1,cc1,sa1,sb1,sc1;
-        ca1 = cos(yaw); sa1 = sin(yaw);
+        ca1 = cos(roll); sa1 = sin(roll);
         cb1 = cos(pitch);sb1 = sin(pitch);
-        cc1 = cos(roll);sc1 = sin(roll);
+        cc1 = cos(yaw);sc1 = sin(yaw);
         return Rotation(ca1*cb1,ca1*sb1*sc1 - sa1*cc1,ca1*sb1*cc1 + sa1*sc1,
                    sa1*cb1,sa1*sb1*sc1 + ca1*cc1,sa1*sb1*cc1 - ca1*sc1,
                    -sb1,cb1*sc1,cb1*cc1);
